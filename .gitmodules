@@ -1,0 +1,6 @@
+[submodule "assets/simulation_repositories/ephesos"]
+	path = assets/simulation_repositories/ephesos
+	url = https://github.com/tdaylan/ephesos.git
+[submodule "assets/simulation_repositories/troia"]
+	path = assets/simulation_repositories/troia
+	url = https://github.com/tdaylan/troia.git
