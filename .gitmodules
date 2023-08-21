@@ -4,3 +4,21 @@
 [submodule "assets/simulation_repositories/troia"]
 	path = assets/simulation_repositories/troia
 	url = https://github.com/tdaylan/troia.git
+[submodule "assets/simulation_repositories/miletos"]
+	path = assets/simulation_repositories/miletos
+	url = https://github.com/tdaylan/miletos.git
+[submodule "assets/simulation_repositories/tdpy"]
+	path = assets/simulation_repositories/tdpy
+	url = https://github.com/tdaylan/tdpy.git
+[submodule "assets/simulation_repositories/nicomedia"]
+	path = assets/simulation_repositories/nicomedia
+	url = https://github.com/tdaylan/nicomedia.git
+[submodule "assets/simulation_repositories/chalcedon"]
+	path = assets/simulation_repositories/chalcedon
+	url = https://github.com/tdaylan/chalcedon.git
+[submodule "assets/simulation_repositories/aspendos"]
+	path = assets/simulation_repositories/aspendos
+	url = https://github.com/tdaylan/aspendos.git
+[submodule "assets/simulation_repositories/lygos"]
+	path = assets/simulation_repositories/lygos
+	url = https://github.com/tdaylan/lygos.git
