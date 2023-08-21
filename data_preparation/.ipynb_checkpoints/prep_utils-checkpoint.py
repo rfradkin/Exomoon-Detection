@@ -1,7 +1,10 @@
 import os
-import numpy as np
-from ephesos import ephesos
+from astropy.io import fits
+import sys
 import copy
+import numpy as np
+GENERAL_UTILS = '/home/rfradkin/Exomoon-Detection/utils'
+sys.path.append(GENERAL_UTILS)
 import utils
 
 
@@ -17,9 +20,10 @@ def return_sector_paths(sector_number):
         file_names.add(f'../assets/fits_data/sector-{sector_number}/{file}')
     return file_names
 
-def create_curves(path):
+
+def setup_curve(path):
     '''
-    Import a light curve from a fits file.
+    Import a TESS curve and setup for processing
     '''
 
     body_attributes = {
@@ -74,12 +78,23 @@ def create_curves(path):
         'rms': None,
         'signal': None,
         'snr': None,
-
         'tic_id': None,
         'toi': None,
     }
-
-    curve['data'] = ephesos.read_tesskplr_file(path)
+    
+    hdulist = fits.open(path)
+    
+    # Extract the data
+    flux = hdulist[1].data['PDCSAP_FLUX']
+    time = hdulist[1].data['TIME']
+    
+    hdulist.close()
+    
+    # Data array is an n by 2 array of type 
+    # [[time1, flux1],
+    #  [time2, flux2],
+    #            ...]
+    curve['data'] = np.column_stack((time, flux))
     curve['file_name'] = path.split('/')[-1]
     curve['tic_id'] = utils.return_TIC_id(path)
         
